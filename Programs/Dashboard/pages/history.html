@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pulse Monitor - History</title>
+  <link rel="stylesheet" href="dash_hist.css">
+</head>
+<body>
+  <div class="history">
+
+    <!-- HEADER -->
+    <header class="header">
+      <h1>Pulse Monitor - History</h1>
+    </header>
+
+    <!-- HISTORY TABLE -->
+    <div class="panel history-table">
+      <h3>Past Readings</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Date/Time</th>
+            <th>Heart Rate (bpm)</th>
+            <th>SpO₂ (%)</th>
+          </tr>
+        </thead>
+        <tbody id="history-body">
+          <tr><td>--</td><td>--</td><td>--</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CHARTS -->
+    <div class="panel history-charts">
+      <div class="chart-container">
+        <h3>Heart Rate Over Time</h3>
+        <canvas id="hrHistoryChart"></canvas>
+      </div>
+      <div class="chart-container">
+        <h3>SpO₂ Over Time</h3>
+        <canvas id="spo2HistoryChart"></canvas>
+      </div>
+    </div>
+
+    <!-- FILTERS + EXPORT -->
+    <div class="panel actions">
+      <div class="filters">
+        <label>Date Range: <input type="date" id="start-date"> - <input type="date" id="end-date"></label>
+        <label>Filter by: 
+          <select id="filter-type">
+            <option value="all">All</option>
+            <option value="average">Average</option>
+            <option value="peak">Peak</option>
+          </select>
+        </label>
+      </div>
+      <div class="export-buttons">
+        <button id="export-csv">Export CSV</button>
+        <button id="export-json">Export JSON</button>
+        <button id="clear-history">Clear History</button>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <span>Device IP: <span id="device-ip">--</span></span> |
+      <span>Wi-Fi: <span id="network-name">--</span></span>
+    </footer>
+
+  </div>
+</body>
+</html>

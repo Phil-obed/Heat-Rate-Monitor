@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pulse Monitor - Dashboard</title>
+  <link rel="stylesheet" href="dash_hist.css">
+</head>
+<body>
+  <div class="dashboard">
+    
+    <!-- HEADER -->
+    <header class="header">
+      <h1>Pulse Monitor</h1>
+      <div class="status">
+        <span id="connection-dot" class="dot disconnected"></span>
+        <span id="connection-status">Disconnected</span>
+        <span id="last-updated">Last updated: --</span>
+      </div>
+    </header>
+
+    <!-- CONTROLS -->
+    <div class="panel controls">
+      <button id="start-stop-btn">Start</button>
+      <button id="reconnect-btn">Reconnect</button>
+    </div>
+
+    <!-- LIVE DATA -->
+    <div class="panel live-data">
+      <div class="metric">
+        <span class="label">Heart Rate</span>
+        <span class="value" id="heart-rate">-- bpm</span>
+      </div>
+      <div class="metric">
+        <span class="label">SpO₂</span>
+        <span class="value" id="spo2">-- %</span>
+      </div>
+    </div>
+
+    <!-- REALTIME CHARTS -->
+    <div class="panel charts">
+      <div class="chart-container">
+        <h3>IR Signal</h3>
+        <canvas id="irChart"></canvas>
+      </div>
+      <div class="chart-container">
+        <h3>RED Signal</h3>
+        <canvas id="redChart"></canvas>
+      </div>
+    </div>
+
+    <!-- SESSION INFO -->
+    <div class="panel session-info">
+      <span>Session Duration: <span id="session-duration">00:00</span></span>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <span>Device IP: <span id="device-ip">--</span></span> |
+      <span>Wi-Fi: <span id="network-name">--</span></span>
+    </footer>
+
+  </div>
+</body>
+</html>
